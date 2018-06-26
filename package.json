@@ -4,7 +4,9 @@
   "description": "Forkify Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,18 @@
   "bugs": {
     "url": "https://github.com/rhys-nicholls/JS-Forkify/issues"
   },
-  "homepage": "https://github.com/rhys-nicholls/JS-Forkify#readme"
+  "homepage": "https://github.com/rhys-nicholls/JS-Forkify#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.10.1",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0"
+  }
 }
