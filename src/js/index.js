@@ -118,3 +118,32 @@ const controlRecipe = async () => {
 
 // Example of multiple eventlisteners with the same function call
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
+
+// Handling recipe button clicks
+
+/*
+* Buttons not in DOM when page loads
+* Attach click EventListener to recipe div
+* .match checks if clicked targets css class matches
+*  * = any child element of
+*/
+elements.recipe.addEventListener('click', el => {
+    if (el.target.matches('.btn-decrease', 'btn-decrease *')) {
+        // Decrease button is clicked
+        if (state.recipe.servings > 1){
+            state.recipe.updateServings('dec');
+            recipeView.updateServingsIngredients(state.recipe);
+
+        } else {
+            alert('You cannot have less than one serving');
+            recipeView.updateServingsIngredients(state.recipe);
+
+        }
+
+    } else if (el.target.matches('.btn-increase', 'btn-increase *')) {
+        // Increase button is clicked
+        state.recipe.updateServings('inc');
+
+    }
+    //console.log(state.recipe);
+});
