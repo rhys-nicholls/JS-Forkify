@@ -82,13 +82,13 @@ export default class Recipe{
                 let count;
 
                 if (arrCount.length === 1) {
-                    count = eval(arrIng[0].replace('-', '+')).toFixed(1).toString();
+                    count = eval(arrIng[0].replace('-', '+'));
                 } else {
-                    count = eval(arrIng.slice(0, unitIndex).join('+')).toFixed(1).toString();
+                    count = eval(arrIng.slice(0, unitIndex).join('+'));
                 }
 
                 objIng = {
-                    count: parseFloat(count),
+                    count,
                     unit: arrIng[unitIndex],
                     ingredient: arrIng.slice(unitIndex + 1).join(' ')
                 }
